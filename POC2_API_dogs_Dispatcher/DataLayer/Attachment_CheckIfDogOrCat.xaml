@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1274.66666666667,1018</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1274.66666666667,1490.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Attachment_CheckIfDogOrCat_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -100,8 +100,12 @@
               <If.Then>
                 <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Dog or Cat to queue" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[&quot;Name:&quot;+row(0).ToString+&quot; Animal:&quot;+row(1).ToString]">
                   <ui:AddQueueItem.ItemInformation>
-                    <InArgument x:TypeArguments="x:String" x:Key="Nume">[row(0).ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Animal">[row(1).ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Nume">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(0).ToString" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Animal">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(1).ToString" />
+                    </InArgument>
                   </ui:AddQueueItem.ItemInformation>
                 </ui:AddQueueItem>
               </If.Then>
